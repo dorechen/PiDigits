@@ -3,14 +3,14 @@ import static java.lang.Math.PI;
 public class PiDigits {
 
 	public static void main (String[] args) {
-
-		int digits = Integer.parseInt(args[0]);
-		String piString = String.valueOf(Math.PI);
-		int length = piString.length();
-		length = length - 2;
+		
+		int length = 0;
 
 		try {
-			System.out.println(Integer.parseInt(args[0]) + " digit(s) of Pi:");
+			int digits = Integer.parseInt(args[0]);
+			String piString = String.valueOf(Math.PI);
+			length = piString.length() - 2;
+			System.out.println(digits + " digit(s) of Pi:");
 			System.out.println(piString.substring(0, digits+2));
 		} catch (NumberFormatException n){
 			System.err.println("Invalid input. Please enter an integer.");
