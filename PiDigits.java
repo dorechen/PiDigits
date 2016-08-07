@@ -14,16 +14,14 @@ public class PiDigits {
 			if (args.length == 0) {
 
 				Scanner scan = new Scanner (System.in);
-				System.out.println("hey! input please!: ");
+				System.out.println("Please enter the number of digits of Pi you want displayed: ");
 				digits = scan.nextInt();
-				System.out.println(digits + " ");
+				getPiDigits(digits);
+				scan.close();
 			} else {
 
 				digits = Integer.parseInt(args[0]);
-				String piString = String.valueOf(Math.PI);
-				length = piString.length() - 2;
-				System.out.println(digits + " digit(s) of Pi:");
-				System.out.println(piString.substring(0, digits+2));
+				getPiDigits(digits);
 			}
 
 		} catch (NumberFormatException n){
@@ -39,5 +37,13 @@ public class PiDigits {
 		//System.out.println(String.valueOf(Math.PI));
 		//System.out.println(Double.toString(Math.PI));
 		//System.out.println(Double.valueOf(Math.PI).toString());
+	}
+
+	public static void getPiDigits(int digits) {
+
+		String piString = String.valueOf(Math.PI);
+		int length = piString.length() - 2;
+		System.out.println(digits + " digit(s) of Pi:");
+		System.out.println(piString.substring(0, digits+2));
 	}
 }
